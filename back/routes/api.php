@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AlumnosController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -46,21 +47,14 @@ Route::post('/usuarios', function(){
 
 
 
-Route::post('/alumnos', function(){
-    return 'Creando usuario';
-});
+Route::post('/alumnos', [AlumnosController::class, 'crear']);
+Route::put('/alumnos/{expediente}', [AlumnosController::class, 'modificar']);
+Route::get('/alumnos', [AlumnosController::class, 'obtener']);
+Route::delete('/alumnos/{expediente}', [AlumnosController::class, 'eliminar']);
 
-Route::get('/alumnos', function(){
-    return 'Obteniendo usuario';
-});
 
-Route::put('/alumnos/{id}', function($id){
-    return 'Modificando usuario ' . $id;
-});
 
-Route::delete('/alumnos', function(){
-    return 'Eliminando usuario';
-});
+
 
 
 Route::get('/edad/{edad}', function($edad){
@@ -70,7 +64,6 @@ Route::get('/edad/{edad}', function($edad){
         return 'Menor de edad';
     }else{
         return 'Error';
-
     }
 
 });
