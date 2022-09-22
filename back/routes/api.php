@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AlumnosController;
+use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\UsuarioController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -68,3 +70,11 @@ Route::get('/edad/{edad}', function($edad){
 
 });
 
+
+Route::get('/usuarios', [UsuarioController::class, 'obtener']);
+Route::post('/usuarios', [UsuarioController::class, 'crear']);
+Route::put('/usuarios/{expediente}', [UsuarioController::class, 'modificar']);
+Route::delete('/usuaris/{expediente}', [UsuarioController::class, 'eliminar']);
+
+
+Route::get('/productos', [ProductoController::class, 'obtener']);
