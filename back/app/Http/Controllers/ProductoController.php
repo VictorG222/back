@@ -11,82 +11,100 @@ class ProductoController extends Controller
     public function obtener()
     {
         $productos = Producto::all();
-        return $productos;
+        return response($productos, 200);
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+
+
+
+
+
+    public function obtenerUnoSolo($id){
+        $producto = Producto::find($id);
+        if($producto!=null){
+            return response($producto,200);
+
+        }
+        return response('No se encontro el producto', 404);
+
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+
+
+
+
+
+    public function crear(Request $request)
     {
-        //
+        $data = $request->validate($this->validateRequest());
+
+        $producto = Producto::create($data);
+
+        return response([
+            'message'=> 'Se creo con exito el producto',
+            'id' => $producto['id']
+        ], 201);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+
+
+
+
+
+    public function eliminar($id)
     {
-        //
+        $producto = Producto::find($id);
+        if(!$producto){
+            return response([
+                'message'=>'No encontrado'
+            ],404);
+        };
+
+        $producto->delete();
+
+        return response([
+            'message'=>'Producto Eliminado'
+        ]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Producto  $producto
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Producto $producto)
+
+
+
+
+
+
+    public function modificar($id,Request $request)
     {
-        //
+        $producto = Producto::find($id);
+        if(!$producto){
+            return response([
+                'message'=>'No encontrado'
+            ],404);
+        }
+
+        $data = $request->validate($this->validateRequest());
+
+        $producto->update($data);
+
+        return response([
+            'message'=>'Se modifico el Producto'
+        ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Producto  $producto
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Producto $producto)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Producto  $producto
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Producto $producto)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Producto  $producto
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Producto $producto)
+
+
+
+
+
+    private function validateRequest()
     {
-        //
+        return [
+            'nombre'=>'required|string',
+            'cantidad'=>'required|numeric',
+            'precio'=>'required|numeric',
+            'descripcion'=>'required|string|min:15',
+        ];
     }
 }

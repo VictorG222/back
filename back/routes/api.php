@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\AlumnosController;
+use App\Http\Controllers\DocenteController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\EstudianteController;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -34,13 +37,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // });
 
 
-Route::get('/usuarios', function(){
-    return 'Obteniendo usuarios';
-});
+// Route::get('/usuarios', function(){
+//     return 'Obteniendo usuarios';
+// });
 
-Route::post('/usuarios', function(){
-    return 'Creando usuario';
-});
+// Route::post('/usuarios', function(){
+//     return 'Creando usuario';
+// });
 
 
 // POST
@@ -49,32 +52,54 @@ Route::post('/usuarios', function(){
 
 
 
-Route::post('/alumnos', [AlumnosController::class, 'crear']);
-Route::put('/alumnos/{expediente}', [AlumnosController::class, 'modificar']);
-Route::get('/alumnos', [AlumnosController::class, 'obtener']);
-Route::delete('/alumnos/{expediente}', [AlumnosController::class, 'eliminar']);
+// Route::post('/alumnos', [AlumnosController::class, 'crear']);
+// Route::put('/alumnos/{expediente}', [AlumnosController::class, 'modificar']);
+// Route::get('/alumnos', [AlumnosController::class, 'obtener']);
+// Route::delete('/alumnos/{expediente}', [AlumnosController::class, 'eliminar']);
 
 
 
 
 
 
-Route::get('/edad/{edad}', function($edad){
-    if ($edad >= 18 and $edad < 100){
-        return 'Mayor de edad';
-    } elseif($edad <= 18 and $edad > 0){
-        return 'Menor de edad';
-    }else{
-        return 'Error';
-    }
+// Route::get('/edad/{edad}', function($edad){
+//     if ($edad >= 18 and $edad < 100){
+//         return 'Mayor de edad';
+//     } elseif($edad <= 18 and $edad > 0){
+//         return 'Menor de edad';
+//     }else{
+//         return 'Error';
+//     }
 
-});
+// });
+
+Route::get('/productos', [ProductoController::class, 'obtener']);
+Route::get('/productos/{id}', [ProductoController::class, 'obtenerUnoSolo']);
+Route::post('/productos', [ProductoController::class, 'crear']);
+Route::put('/productos/{id}', [ProductoController::class, 'modificar']);
+Route::delete('/productos/{id}', [ProductoController::class, 'eliminar']);
+
 
 
 Route::get('/usuarios', [UsuarioController::class, 'obtener']);
 Route::post('/usuarios', [UsuarioController::class, 'crear']);
-Route::put('/usuarios/{expediente}', [UsuarioController::class, 'modificar']);
-Route::delete('/usuaris/{expediente}', [UsuarioController::class, 'eliminar']);
+Route::put('/usuarios/{id}', [UsuarioController::class, 'modificar']);
+Route::delete('/usuarios/{id}', [UsuarioController::class, 'eliminar']);
 
 
-Route::get('/productos', [ProductoController::class, 'obtener']);
+
+Route::get('/docentes/{matricula}', [DocenteController::class, 'show']);
+
+
+
+
+
+
+
+
+
+Route::get('/estudiantes', [EstudianteController::class, 'listar']);
+
+
+
+Route::post('/login', [UsuarioController::class, 'login']);
