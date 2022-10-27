@@ -81,7 +81,7 @@ Route::delete('/productos/{id}', [ProductoController::class, 'eliminar']);
 
 
 
-Route::get('/usuarios', [UsuarioController::class, 'obtener']);
+Route::get('/usuarios', [UsuarioController::class, 'obtener'])->middleware('auth:sanctum');
 Route::post('/usuarios', [UsuarioController::class, 'crear']);
 Route::put('/usuarios/{id}', [UsuarioController::class, 'modificar']);
 Route::delete('/usuarios/{id}', [UsuarioController::class, 'eliminar']);
@@ -89,14 +89,6 @@ Route::delete('/usuarios/{id}', [UsuarioController::class, 'eliminar']);
 
 
 Route::get('/docentes/{matricula}', [DocenteController::class, 'show']);
-
-
-
-
-
-
-
-
 
 Route::get('/estudiantes', [EstudianteController::class, 'listar']);
 

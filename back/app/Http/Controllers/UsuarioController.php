@@ -107,8 +107,12 @@ class UsuarioController extends Controller
             ],404);
         }
 
+        $token = $usuario->createToken('token-user')->plainTextToken;
+
         return response([
-            'message'=>'Ta bien'
+            'message'=>'Ta bien',
+            'message'=>'Ta bien',
+            'token'=> $token
         ]);
 
     }
@@ -138,7 +142,7 @@ class UsuarioController extends Controller
     private function validateLogin()
     {
         return [
-            'email'=>'required|string|email|unique:usuarios',
+            'email'=>'required|string|email',
             'password'=>'required|string|min:8',
         ];
     }
