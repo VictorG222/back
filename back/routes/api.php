@@ -5,7 +5,7 @@ use App\Http\Controllers\DocenteController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\EstudianteController;
-
+use App\Http\Controllers\VentaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -73,25 +73,30 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // });
 
-Route::get('/productos', [ProductoController::class, 'obtener']);
-Route::get('/productos/{id}', [ProductoController::class, 'obtenerUnoSolo']);
-Route::post('/productos', [ProductoController::class, 'crear']);
-Route::put('/productos/{id}', [ProductoController::class, 'modificar']);
-Route::delete('/productos/{id}', [ProductoController::class, 'eliminar']);
+Route::middleware('auth:sanctum')->group(function() {
 
 
+    Route::get('/usuarios', [UsuarioController::class, 'obtener']);
+    Route::post('/usuarios', [UsuarioController::class, 'crear']);
+    Route::put('/usuarios/{id}', [UsuarioController::class, 'modificar']);
+    Route::delete('/usuarios/{id}', [UsuarioController::class, 'eliminar']);
 
-Route::get('/usuarios', [UsuarioController::class, 'obtener'])->middleware('auth:sanctum');
-Route::post('/usuarios', [UsuarioController::class, 'crear']);
-Route::put('/usuarios/{id}', [UsuarioController::class, 'modificar']);
-Route::delete('/usuarios/{id}', [UsuarioController::class, 'eliminar']);
+    Route::get('/productos', [ProductoController::class, 'obtener']);
+    Route::get('/productos/{id}', [ProductoController::class, 'obtenerUnoSolo']);
+    Route::post('/productos', [ProductoController::class, 'crear']);
+    Route::put('/productos/{id}', [ProductoController::class, 'modificar']);
+    Route::delete('/productos/{id}', [ProductoController::class, 'eliminar']);
 
+    Route::get('/ventas', [VentaController::class, 'obtener']);
+    Route::post('/ventas', [VentaController::class, 'crear']);
+    Route::put('/ventas/{id}', [VentaController::class, 'modificar']);
+    Route::delete('/ventas/{id}', [VentaController::class, 'eliminar']);
+
+
+});
 
 
 Route::get('/docentes/{matricula}', [DocenteController::class, 'show']);
-
 Route::get('/estudiantes', [EstudianteController::class, 'listar']);
-
-
 
 Route::post('/login', [UsuarioController::class, 'login']);
