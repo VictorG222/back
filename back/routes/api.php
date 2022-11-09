@@ -99,4 +99,11 @@ Route::middleware('auth:sanctum')->group(function() {
 Route::get('/docentes/{matricula}', [DocenteController::class, 'show']);
 Route::get('/estudiantes', [EstudianteController::class, 'listar']);
 
+
+
 Route::post('/login', [UsuarioController::class, 'login']);
+
+
+
+Route::post('/usuarios/generar-codigo', [UsuarioController::class, 'generar']);
+Route::post('/usuarios/cambiar-pass', [UsuarioController::class, 'cambiar']);

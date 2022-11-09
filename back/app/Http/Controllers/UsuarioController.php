@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Usuario;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class UsuarioController extends Controller
 {
@@ -147,4 +148,72 @@ class UsuarioController extends Controller
         ];
     }
 
+
+
+
+
+
+
+
+
+
+    public function generar(Request $request)
+    {
+        $usuario = Usuario::where('email', $request['email'])->first();
+        if(!$usuario){
+            return response([
+                'message'=>'No encontrado'
+            ],404);
+        }
+
+        $data = $request->validate($this->validateGenerar());
+
+        $usuario->update(
+            ['codigo_verificacion' => Str::random()]);
+
+        return response([
+            'token'=>$usuario
+        ]);
+    }
+
+
+    public function cambiar(Request $request)
+    {
+        $usuario = Usuario::where('email', $request['email'])
+        ->where('codigo_verificacion', $request['codigo_verificacion'])
+        ->first();
+
+
+        if(!$usuario){
+            return response([
+                'message'=>'No encontrado'
+            ],404);
+        }
+
+        $data = $request->validate($this->validateCambiar());
+
+        $data['codigo_verificacion'] = "";
+
+        $usuario->update($data);
+
+        return response([
+            'message'=>'Se modifico la password'
+        ]);
+    }
+
+    private function validateGenerar()
+    {
+        return [
+            'email'=>'required|string|email'
+        ];
+    }
+
+    private function validateCambiar()
+    {
+        return [
+            'email'=>'required|string|email',
+            'codigo_verificacion'=>'required|string',
+            'password'=>'required|string|min:8',
+        ];
+    }
 }

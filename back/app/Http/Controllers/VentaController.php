@@ -65,8 +65,8 @@ class VentaController extends Controller
     private function validateRequest()
     {
         return [
-            'id_usuario'=>'required|exists:usuarios',
-            'id_producto'=>'required|exists:productos',
+            'id_usuario'=>'required|exists:usuarios,id',
+            'id_producto'=>'required|exists:productos,id',
             'fecha_compra'=>'required|date',
         ];
     }

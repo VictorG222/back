@@ -16,7 +16,8 @@ class Usuario extends Model
         'nombre',
         'email',
         'edad',
-        'password'
+        'password',
+        'codigo_verificacion'
     ];
     use HasFactory;
 }
