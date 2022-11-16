@@ -12,18 +12,16 @@
 
     <table>
         <thead>
-            <th>character</th>
-            <th>image</th>
-            <th>gameSeries</th>
+            <th>id</th>
+            <th>nombre</th>
+            <th>email</th>
         </thead>
         <tbody>
-            @foreach($amiibos as $amiibos)
+            @foreach($usuarios as $usuario)
             <tr>
-                <td>{{$amiibos['character']}}</td>
-                <td>
-                    <img src="{{$amiibos['image']}}" width="100px">
-                    </td>
-                <td>{{$amiibos['gameSeries']}}</td>
+                <td>{{$usuario['id']}}</td>
+                <td>{{$usuario['nombre']}}</td>
+                <td>{{$usuario['email']}}</td>
             </tr>
             @endforeach
         </tbody>

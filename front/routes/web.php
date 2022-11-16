@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\amiiboController;
 use App\Http\Controllers\Amiibos;
+use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\usuarioController as ControllersUsuarioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,4 +22,5 @@ Route::get('/', function () {
 });
 
 
-Route::get('/amiibos', [Amiibos::class, 'obtener']);
+Route::get('/amiibos', [amiiboController::class, 'index']);
+Route::get('/usuarios', [UsuarioController::class, 'index']);
