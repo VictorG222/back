@@ -16,7 +16,7 @@ class UsuarioController extends Controller
         // $usuarios = Usuario::all();
 
         // registros paginados
-        $usuarios = Usuario::paginate();
+        $usuarios = Usuario::with('citas')->get();
 
         // contar usuarios
         // $usuarios = Usuario::count();

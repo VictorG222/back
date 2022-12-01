@@ -20,4 +20,8 @@ class Usuario extends Model
         'codigo_verificacion'
     ];
     use HasFactory;
+
+    public function citas(){
+        return $this->hasMany(cita::class, 'id_usuario', 'id');
+    }
 }

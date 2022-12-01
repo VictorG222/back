@@ -1,10 +1,15 @@
 <?php
 
 use App\Http\Controllers\AlumnosController;
+use App\Http\Controllers\AreaController;
+use App\Http\Controllers\CitaController;
 use App\Http\Controllers\DocenteController;
+use App\Http\Controllers\EstadoGlobalController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\EstudianteController;
+use App\Http\Controllers\ProgramaController;
+use App\Http\Controllers\ProyectoController;
 use App\Http\Controllers\VentaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -73,7 +78,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // });
 
-// Route::middleware('auth:sanctum')->group(function() {
+Route::middleware('auth:sanctum')->group(function() {
 
 
     Route::get('/usuarios', [UsuarioController::class, 'obtener']);
@@ -93,17 +98,49 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     Route::delete('/ventas/{id}', [VentaController::class, 'eliminar']);
 
 
-// });
 
 
-Route::get('/docentes/{matricula}', [DocenteController::class, 'show']);
-Route::get('/estudiantes', [EstudianteController::class, 'listar']);
 
+
+
+
+
+
+
+
+    Route::get('/programas', [ProgramaController::class, 'show']);
+    Route::post('/programas', [ProgramaController::class, 'index']);
+    Route::put('/programas/{id}', [ProgramaController::class, 'update']);
+    Route::delete('/programas/{id}', [ProgramaController::class, 'destroy']);
+
+    Route::get('/proyectos', [ProyectoController::class, 'show']);
+    Route::post('/proyectos', [ProyectoController::class, 'index']);
+    Route::put('/proyectos/{id}', [ProyectoController::class, 'update']);
+    Route::delete('/proyectos/{id}', [ProyectoController::class, 'destroy']);
+
+    Route::get('/estados-globales', [EstadoGlobalController::class, 'show']);
+    Route::post('/estados-globales', [EstadoGlobalController::class, 'index']);
+    Route::put('/estados-globales/{id}', [EstadoGlobalController::class, 'update']);
+    Route::delete('/estados-globales/{id}', [EstadoGlobalController::class, 'destroy']);
+
+    Route::get('/areas', [AreaController::class, 'show']);
+    Route::post('/areas', [AreaController::class, 'index']);
+    Route::put('/areas/{id}', [AreaController::class, 'update']);
+    Route::delete('/areas/{id}', [AreaController::class, 'destroy']);
+
+
+
+
+
+
+});
+
+
+// Route::get('/docentes/{matricula}', [DocenteController::class, 'show']);
+// Route::get('/estudiantes', [EstudianteController::class, 'listar']);
+// Route::get('/citas', [CitaController::class, 'index']);
 
 
 Route::post('/login', [UsuarioController::class, 'login']);
-
-
-
 Route::post('/usuarios/generar-codigo', [UsuarioController::class, 'generar']);
 Route::post('/usuarios/cambiar-pass', [UsuarioController::class, 'cambiar']);
