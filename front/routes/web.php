@@ -28,6 +28,7 @@ Route::get('/', function () {
 Route::get('/amiibos', [amiiboController::class, 'index']);
 Route::get('/usuarios', [UsuarioController::class, 'index']);
 Route::get('/asset', [AssetController::class, 'index']);
+Route::get('/programa', [AssetController::class, 'index']);
 
 
 Route::get('/contador', Contador::class);
