@@ -1,13 +1,15 @@
 <?php
 
 use App\Http\Livewire\Contador;
+use App\Http\Livewire\Usuarios;
 use App\Http\Controllers\Amiibos;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AssetController;
+use App\Http\Livewire\ProgramaController;
 use App\Http\Controllers\amiiboController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\usuarioController as ControllersUsuarioController;
-use App\Http\Livewire\Usuarios;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +30,7 @@ Route::get('/', function () {
 Route::get('/amiibos', [amiiboController::class, 'index']);
 Route::get('/usuarios', [UsuarioController::class, 'index']);
 Route::get('/asset', [AssetController::class, 'index']);
-Route::get('/programa', [AssetController::class, 'index']);
 
+Route::get('/programa', ProgramaController::class);
 
 Route::get('/contador', Contador::class);
