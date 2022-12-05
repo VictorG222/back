@@ -3,7 +3,9 @@
 use App\Http\Livewire\Contador;
 use App\Http\Livewire\Usuarios;
 use App\Http\Controllers\Amiibos;
+use App\Http\Livewire\ProgramaShow;
 use App\Http\Controllers\Controller;
+use App\Http\Livewire\ProgramaCreate;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AssetController;
 use App\Http\Livewire\ProgramaController;
@@ -32,5 +34,7 @@ Route::get('/usuarios', [UsuarioController::class, 'index']);
 Route::get('/asset', [AssetController::class, 'index']);
 
 Route::get('/programa', ProgramaController::class);
+Route::get('/programa/create', ProgramaCreate::class);
+Route::get('/programa/{id}/show', ProgramaShow::class);
 
 Route::get('/contador', Contador::class);

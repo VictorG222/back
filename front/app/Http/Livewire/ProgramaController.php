@@ -8,6 +8,9 @@ class ProgramaController extends Component
 {
     public function render()
     {
-        return view('livewire.programa-controller');
+        $programasJSON = Http::get('http://127.0.0.1:8000/api/programas')->json();
+        $programas = $programasJSON['data'];
+        return view('livewire.programa-controller', compact('programas'));
     }
+
 }
