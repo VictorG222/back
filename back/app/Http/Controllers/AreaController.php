@@ -113,7 +113,7 @@ class AreaController extends Controller
         return [
             'descripcion'=>'required|string',
             'disponible'=>'required|boolean',
-            'estados_globales_id'=>'required|exists:estados_globals,id',
+            'estados_globales'=>'required|exists:estado_globals,id',
         ];
     }
 
@@ -123,7 +123,7 @@ class AreaController extends Controller
         return [
             'descripcion'=>'string',
             'disponible'=>'boolean',
-            'estados_globales_id'=>'exists:estados_globals,id',
+            'estados_globales'=>'exists:estado_globals,id',
         ];
     }
 

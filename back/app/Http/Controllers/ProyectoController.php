@@ -113,9 +113,8 @@ class ProyectoController extends Controller
         return [
             'nombre'=>'required|string',
             'clave'=>'required|string|unique:proyecto',
-            'anio_de_finalizacion'=>'required|date|',
             'programa_id'=>'required|exists:programas,id',
-            'estados_globales_id'=>'required|exists:estados_globals,id'
+            'estados_globales'=>'required|exists:estado_globals,id'
         ];
     }
 
@@ -125,9 +124,8 @@ class ProyectoController extends Controller
             return [
                 'nombre'=>'string',
                 'clave'=>'string|unique:proyecto',
-                'anio_de_finalizacion'=>'date|',
                 'programa_id'=>'exists:programas,id',
-                'estados_globales_id'=>'exists:estados_globals,id'
+                'estados_globales'=>'exists:estado_globals,id'
             ];
         }
 }

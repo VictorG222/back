@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('descripcion');
             $table->boolean('disponible');
             $table->unsignedBigInteger('estados_globales');
+            $table->timestamps();
 
             $table -> foreign('estados_globales') -> on('estado_globals') -> references('id');
         });

@@ -15,7 +15,7 @@ class ProgramaController extends Controller
     public function index(Request $request)
     {
         //
-        $data = $request->validate($this->validateEstadoGlobal());
+        $data = $request->validate($this->validateCrearPrograma());
 
         $programa = Programa::create($data);
 
@@ -107,10 +107,8 @@ class ProgramaController extends Controller
             'nombre'=>'required|string',
             'descripcion'=>'required|string',
             'clave'=>'required|string|unique:programa',
-            'vigencia_de_inicio'=>'required|date|',
-            'vigencia_de_fin'=>'required|date|',
-            'unidad_responsable'=>'required|exists:areas,id',
-            'estados_globales_id'=>'required|exists:estados_globals,id'
+            'areas_id'=>'required|exists:areas,id',
+            'estados_globales_id'=>'required|exists:estado_globals,id'
         ];
     }
 
@@ -121,10 +119,8 @@ class ProgramaController extends Controller
                 'nombre'=>'string',
                 'descripcion'=>'string',
                 'clave'=>'string|unique:programa',
-                'vigencia_de_inicio'=>'date',
-                'vigencia_de_fin'=>'date',
-                'unidad_responsable'=>'exists:areas,id',
-                'estados_globales_id'=>'exists:estados_globals,id'
+                'areas_id'=>'exists:areas,id',
+                'estados_globales_id'=>'exists:estado_globals,id'
             ];
         }
 }

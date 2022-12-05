@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('clave');
-            $table->timestamps();
             $table->unsignedBigInteger('programa_id');
             $table->unsignedBigInteger('estados_globales');
+            $table->timestamps();
 
             $table -> foreign('programa_id') -> on('programas') -> references('id');
             $table -> foreign('estados_globales') -> on('estado_globals') -> references('id');

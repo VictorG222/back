@@ -82,7 +82,6 @@ Route::middleware('auth:sanctum')->group(function() {
 
 
     Route::get('/usuarios', [UsuarioController::class, 'obtener']);
-    Route::post('/usuarios', [UsuarioController::class, 'crear']);
     Route::put('/usuarios/{id}', [UsuarioController::class, 'modificar']);
     Route::delete('/usuarios/{id}', [UsuarioController::class, 'eliminar']);
 
@@ -144,3 +143,4 @@ Route::middleware('auth:sanctum')->group(function() {
 Route::post('/login', [UsuarioController::class, 'login']);
 Route::post('/usuarios/generar-codigo', [UsuarioController::class, 'generar']);
 Route::post('/usuarios/cambiar-pass', [UsuarioController::class, 'cambiar']);
+Route::post('/usuarios', [UsuarioController::class, 'crear']);

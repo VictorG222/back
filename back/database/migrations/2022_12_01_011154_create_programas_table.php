@@ -18,9 +18,9 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('descripcion');
             $table->string('clave');
-            $table->timestamps();
             $table->unsignedBigInteger('areas_id');
             $table->unsignedBigInteger('estados_globales');
+            $table->timestamps();
 
             $table -> foreign('areas_id') -> on('areas') -> references('id');
             $table -> foreign('estados_globales') -> on('estado_globals') -> references('id');
