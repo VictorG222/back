@@ -132,17 +132,20 @@ Route::post('/programas', [ProgramaController::class, 'index']);
 Route::put('/programas/{id}', [ProgramaController::class, 'update']);
 Route::delete('/programas/{id}', [ProgramaController::class, 'destroy']);
 
-Route::get('/proyectos', [ProyectoController::class, 'show']);
+Route::get('/proyectos', [ProyectoController::class, 'showAll']);
+Route::get('/proyectos/{id}', [ProyectoController::class, 'show']);
 Route::post('/proyectos', [ProyectoController::class, 'index']);
 Route::put('/proyectos/{id}', [ProyectoController::class, 'update']);
 Route::delete('/proyectos/{id}', [ProyectoController::class, 'destroy']);
 
-Route::get('/estados-globales', [EstadoGlobalController::class, 'show']);
+Route::get('/estados-globales', [EstadoGlobalController::class, 'showAll']);
+Route::get('/estados-globales/{id}', [EstadoGlobalController::class, 'show']);
 Route::post('/estados-globales', [EstadoGlobalController::class, 'index']);
 Route::put('/estados-globales/{id}', [EstadoGlobalController::class, 'update']);
 Route::delete('/estados-globales/{id}', [EstadoGlobalController::class, 'destroy']);
 
-Route::get('/areas', [AreaController::class, 'show']);
+Route::get('/areas', [AreaController::class, 'showAll']);
+Route::get('/areas/{id}', [AreaController::class, 'show']);
 Route::post('/areas', [AreaController::class, 'index']);
 Route::put('/areas/{id}', [AreaController::class, 'update']);
 Route::delete('/areas/{id}', [AreaController::class, 'destroy']);

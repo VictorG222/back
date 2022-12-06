@@ -37,9 +37,11 @@ class ProyectoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function showAll()
     {
         //
+        $proyecto = Proyecto::with('programa:id,nombre')->get();
+        return $proyecto;
     }
 
     /**
@@ -48,11 +50,15 @@ class ProyectoController extends Controller
      * @param  \App\Models\Proyecto  $proyecto
      * @return \Illuminate\Http\Response
      */
-    public function show(Proyecto $proyecto)
+    public function show($id)
     {
         //
-        $proyecto = Proyecto::with('programa:id,nombre')->get();
-        return $proyecto;
+        $proyecto = Proyecto::find($id);
+        if($proyecto!=null){
+            return response($proyecto,200);
+
+        }
+        return response('No se encontro el proyecto', 404);
     }
 
     /**
