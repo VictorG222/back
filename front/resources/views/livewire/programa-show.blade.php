@@ -2,6 +2,7 @@
     <div class="col-md-8 mx-auto">
         <div class="card card-widget widget-user-2">
             <div class="widget-user-header bg-success">
+
                 <h3 class="widget-user-username"> {{ $programa['nombre'] }}</h3>
                 <h5 class="widget-user-desc">Descripcion {{ $programa['descripcion'] }}</h5>
             </div>
