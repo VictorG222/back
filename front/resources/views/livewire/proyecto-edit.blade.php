@@ -1,7 +1,7 @@
 <div>
     <div class="card card-success">
         <div class="card-header">
-            <h3 class="card-title">MODIFICAR PROGRAMA</h3>
+            <h3 class="card-title">MODIFICAR PROYECTO</h3>
         </div>
 
         <form wire:submit.prevent='modificar'>

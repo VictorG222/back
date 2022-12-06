@@ -8,23 +8,21 @@ use Illuminate\Support\Facades\Http;
 class ProgramaController extends Component
 {
     public $idPrograma;
-    public $listener=['eliminar'];
+    public $listeners = ['delete'];
+
+
     public function render()
     {
-        $response = Http::get('http://127.0.0.1:8000/api/programas');
+        $response = Http::get('http://127.0.0.1:8001/api/programas');
         $programas = $response->json();
         return view('livewire.programa-controller', compact('programas'));
     }
 
-    public function ConfirmarDelete()
+    public function ConfirmarDelete($id)
     {
         $this->idPrograma = $id;
-        $this->emit('Delete', 'Desea eliminar esta informacion?');
-    }
+        Http::delete('http://127.0.0.1:8001/api/programas/'.$this->idPrograma);
 
-    public function eliminar()
-    {
-        Http::delete('http://127.0.0.1:8000/api/programas/' . $this->idPrograma);
     }
 
 }

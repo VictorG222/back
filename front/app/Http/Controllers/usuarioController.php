@@ -11,7 +11,7 @@ class UsuarioController extends Controller
 
     public function index()
     {
-        $response = Http::get("http://127.0.0.1:8000/api/usuarios");
+        $response = Http::get("http://127.0.0.1:8001/api/usuarios");
         $usuarios = $response->json()['data'];
         return view('livewire.usuarios');
         // return view('usuario',compact('usuarios'));

@@ -3,17 +3,19 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use Illuminate\Support\Facades\Http;
 
 class ProgramaShow extends Component
 {
-    public $programa;
+    public $idPrograma;
     public function mount($id)
     {
-        $this->programa = Http::get('http://127.0.0.1:8000/api/programas/'. $id)->json();
+        $this->idPrograma = $id;
     }
 
     public function render()
     {
-        return view('livewire.programa-show');
+        $programa = Http::get('http://127.0.0.1:8001/api/programas/'.$this->idPrograma)->json();
+        return view('livewire.programa-show',compact('programa'));
     }
 }

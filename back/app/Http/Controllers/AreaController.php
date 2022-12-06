@@ -33,9 +33,11 @@ class AreaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function showAll()
     {
         //
+        $area = Area::all();
+        return $area;
     }
 
     /**
@@ -44,12 +46,16 @@ class AreaController extends Controller
      * @param  \App\Models\Area  $area
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
         //
+        $area = Area::find($id);
+        if($area!=null){
+            return response($area,200);
 
-        $area = Area::all();
-        return $area;
+        }
+        return response('No se encontro el area', 404);
+
     }
 
     /**

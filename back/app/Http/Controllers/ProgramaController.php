@@ -31,9 +31,11 @@ class ProgramaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function showAll(Request $request)
     {
         //
+        $programa = Programa::with('proyectos:id,nombre')->get();
+        return $programa;
     }
 
     /**
@@ -42,11 +44,16 @@ class ProgramaController extends Controller
      * @param  \App\Models\Programa  $programa
      * @return \Illuminate\Http\Response
      */
-    public function show(Programa $programa)
+    public function show($id)
     {
         //
-        $programa = Programa::with('proyectos:id,nombre')->get();
-        return $programa;
+        $programa = Programa::find($id);
+        // ->with('proyectos:id,nombre')->get();
+        if($programa!=null){
+            return response($programa,200);
+
+        }
+        return response('No se encontro el programa', 404);
     }
 
     /**

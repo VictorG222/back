@@ -2,17 +2,17 @@
 
 namespace App\Http\Livewire;
 
-use Livewire\Component;
 use Illuminate\Support\Facades\Http;
+use Livewire\Component;
 
-class ProgramaCreate extends Component
+class EstadoCreate extends Component
 {
     public $datos = [];
     public $errores = [];
 
     public function render()
     {
-        return view('livewire.programa-create');
+        return view('livewire.estado-create');
     }
 
     public function guardar()
@@ -20,16 +20,13 @@ class ProgramaCreate extends Component
 
         $response = Http::withHeaders([
             'Accept' => 'Application/json'
-        ]) -> post('http://127.0.0.1:8001/api/programas', $this->datos);
-
-        // dd($response->json());
+        ]) -> post('http://127.0.0.1:8001/api/estados-globales', $this->datos);
 
         if ($response->successful()) {
-            // $this->emit('Success', 'Se creo con exito');
-            return redirect('/programa');
+            return redirect('/estado');
         } else{
-            // dd($response->json());
             $this->errores = $response->json();
         }
     }
+
 }

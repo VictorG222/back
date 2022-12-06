@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('descripcion');
             $table->boolean('disponible');
-            $table->unsignedBigInteger('estados_globales');
+            $table->unsignedBigInteger('estados_globales')->nullable();
             $table->timestamps();
 
-            $table -> foreign('estados_globales') -> on('estado_globals') -> references('id');
+            $table -> foreign('estados_globales') -> on('estado_globals') -> references('id')->onDelete('cascade');
         });
     }
 

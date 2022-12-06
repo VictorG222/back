@@ -31,9 +31,11 @@ class EstadoGlobalController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function showAll()
     {
         //
+        $estadoGlobal = EstadoGlobal::all();
+        return $estadoGlobal;
     }
 
     /**
@@ -42,11 +44,15 @@ class EstadoGlobalController extends Controller
      * @param  \App\Models\EstadoGlobal  $estadoGlobal
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
         //
-        $estadoGlobal = EstadoGlobal::all();
-        return $estadoGlobal;
+        $estadoGlobal = EstadoGlobal::find($id);
+        if($estadoGlobal!=null){
+            return response($estadoGlobal,200);
+
+        }
+        return response('No se encontro el estado global', 404);
     }
 
     /**
