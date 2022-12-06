@@ -12,6 +12,7 @@ use App\Http\Livewire\ProgramaController;
 use App\Http\Controllers\amiiboController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\usuarioController as ControllersUsuarioController;
+use App\Http\Livewire\EstadoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +39,6 @@ Route::get('/programa/create', ProgramaCreate::class);
 Route::get('/programa/{id}/show', ProgramaShow::class);
 
 Route::get('/contador', Contador::class);
+
+
+Route::get('/estados', EstadoController::class);
