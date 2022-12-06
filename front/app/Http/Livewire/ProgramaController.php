@@ -21,14 +21,8 @@ class ProgramaController extends Component
     public function ConfirmarDelete($id)
     {
         $this->idPrograma = $id;
-        $response = Http::delete('http://127.0.0.1:8001/api/programas/'.$this->idPrograma);
+        Http::delete('http://127.0.0.1:8001/api/programas/'.$this->idPrograma);
 
-        // $this->emit('delete', '¿Desea eliminar esta informacion?');
     }
-
-    // public function eliminar()
-    // {
-    //     dd($response->json());
-    // }
 
 }

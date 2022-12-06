@@ -7,7 +7,7 @@
 
         <form wire:submit.prevent='guardar'>
 
-            @include('livewire.formulario')
+            @include('livewire.formulario-programa')
 
 
             <div class="card-footer">

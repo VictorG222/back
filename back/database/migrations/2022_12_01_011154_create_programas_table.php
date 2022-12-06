@@ -18,12 +18,12 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('descripcion');
             $table->string('clave')->unique();
-            $table->unsignedBigInteger('areas_id');
-            $table->unsignedBigInteger('estados_globales');
+            $table->unsignedBigInteger('areas_id')->nullable();
+            $table->unsignedBigInteger('estados_globales')->nullable();
             $table->timestamps();
 
-            $table -> foreign('areas_id') -> on('areas') -> references('id');
-            $table -> foreign('estados_globales') -> on('estado_globals') -> references('id');
+            $table -> foreign('areas_id') -> on('areas') -> references('id')->onDelete('cascade');
+            $table -> foreign('estados_globales') -> on('estado_globals') -> references('id')->onDelete('cascade');
 
         });
 

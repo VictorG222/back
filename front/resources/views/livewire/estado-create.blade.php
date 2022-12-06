@@ -1,20 +1,41 @@
-<div class="card card-primary">
-    <div class="card-header">
-        <h3 class="card-title">CREAR ESTADO</h3>
+<div>
+
+    <div class="card card-success">
+        <div class="card-header">
+            <h3 class="card-title">CREAR UN ESTADO GLOBAL</h3>
+        </div>
+
+        <form wire:submit.prevent='guardar'>
+
+            <div class="card-body">
+
+                @if (array_key_exists('message', $errores))
+                    <div class="alert alert-danger">
+                        <b>{{ $errores['message'] }}</b>
+                    </div>
+                @endif
+
+                <div class="form-group">
+                    <label>Nombre del estado global</label>
+                    <input wire:model='datos.descripcion' type="text" class="form-control" placeholder="Nombre del estado global">
+                    @if (array_key_exists('errors', $errores) && array_key_exists('descripcion', $errores['errors']))
+                        <b class="text-danger">{{ $errores['errors']['descripcion']['0'] }}</b>
+                    @endif
+            </div>
+
+
+            <div class="card-footer">
+                <button type="submit" class="btn btn-success">CREAR</button>
+            </div>
+        </form>
     </div>
-
-
-    <form wire:submit.prevent='guardarEstado'>
-        <div class="card-body">
-            <div class="form-group">
-                <label for="exampleInputEmail1">DESCRIPCION</label>
-                <input wire:model='datos.descripcion' class="form-control" placeholder="Estado global">
-
-
-        </div>
-
-        <div class="card-footer">
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-    </form>
 </div>
+
+
+
+
+
+
+
+
+

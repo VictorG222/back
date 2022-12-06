@@ -17,12 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('clave');
-            $table->unsignedBigInteger('programa_id');
-            $table->unsignedBigInteger('estados_globales');
+            $table->unsignedBigInteger('programa_id')->nullable();
+            $table->unsignedBigInteger('estados_globales')->nullable();
             $table->timestamps();
 
-            $table -> foreign('programa_id') -> on('programas') -> references('id');
-            $table -> foreign('estados_globales') -> on('estado_globals') -> references('id');
+            $table -> foreign('programa_id') -> on('programas') -> references('id')->onDelete('cascade');
+            $table -> foreign('estados_globales') -> on('estado_globals') -> references('id')->onDelete('cascade');
         });
 
     }

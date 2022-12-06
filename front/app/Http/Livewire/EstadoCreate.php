@@ -7,26 +7,26 @@ use Livewire\Component;
 
 class EstadoCreate extends Component
 {
-    public $datos=[
-        'descripcion'=>''
-    ];
+    public $datos = [];
+    public $errores = [];
 
     public function render()
     {
         return view('livewire.estado-create');
     }
 
-    public function guardarEstado(){
+    public function guardar()
+    {
+
         $response = Http::withHeaders([
             'Accept' => 'Application/json'
-        ])
-        ->post('http://127.0.0.1:8001/api/estados-globales', $this->datos);
+        ]) -> post('http://127.0.0.1:8001/api/estados-globales', $this->datos);
 
-
-        if ($response->successful()){
-            return redirect('/alumnos');
-        } else {
-            dd('Error');
+        if ($response->successful()) {
+            return redirect('/estado');
+        } else{
+            $this->errores = $response->json();
         }
     }
+
 }
