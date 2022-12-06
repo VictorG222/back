@@ -1,6 +1,6 @@
 <div>
 
-    <a class="btn btn-block btn-success" href="/programa/create"><i class="fa fa-save"></i>CREAR PROGRAMA</a>
+
     <div class="card card-success">
         <div class="card-header">
             <h3 class="card-title">TABLA DE PROGRAMAS</h3>
@@ -35,6 +35,13 @@
                 </tbody>
             </table>
         </div>
+
+
+        <div class=“container” style="width: 25%; margin: 0 auto">
+            <a class="btn btn-block btn-success" href="/programa/create" width="100 px"><i class="fa fa-save"></i> CREAR PROGRAMA</a>
+          </div>
+
+
 
         <div class="card-footer clearfix">
             <ul class="pagination pagination-sm m-0 float-right">
