@@ -20,7 +20,7 @@ class EstadoCreate extends Component
         $response = Http::withHeaders([
             'Accept' => 'Application/json'
         ])
-        ->post('http://127.0.0.1:8000/api/estados-globales', $this->datos);
+        ->post('http://127.0.0.1:8001/api/estados-globales', $this->datos);
 
 
         if ($response->successful()){

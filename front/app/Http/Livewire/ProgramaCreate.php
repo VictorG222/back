@@ -20,12 +20,12 @@ class ProgramaCreate extends Component
 
         $response = Http::withHeaders([
             'Accept' => 'Application/json'
-        ]) -> post('http://127.0.0.1:8000/api/programas', $this->datos);
+        ]) -> post('http://127.0.0.1:8001/api/programas', $this->datos);
 
         // dd($response->json());
 
         if ($response->successful()) {
-            $this->emit('Success', 'Se creo con exito');
+            // $this->emit('Success', 'Se creo con exito');
             return redirect('/programa');
         } else{
             // dd($response->json());

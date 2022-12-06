@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use Illuminate\Support\Facades\Http;
 
 class ProgramaEdit extends Component
 {
@@ -14,7 +15,7 @@ class ProgramaEdit extends Component
     public function mount($id)
     {
         $this->idPrograma = $id;
-        $this->datos = Http::get('http://127.0.0.1:8000/api/programas/' . $id)->json();
+        $this->datos = Http::get('http://127.0.0.1:8001/api/programas/' . $id)->json();
     }
 
     public function render()
@@ -25,10 +26,10 @@ class ProgramaEdit extends Component
     public function modificar()
     {
         $response = Http::withHeaders(['Accept'=>'Application/json'])
-        ->put('http://127.0.0.1:8000/api/programas/' . $this->idPrograma, $this->datos);
+        ->put('http://127.0.0.1:8001/api/programas/' . $this->idPrograma, $this->datos);
         if ($response->successful()) {
-            $this->emit('Success', 'Se modifico con exito');
-            return redirect('/programas');
+            // $this->emit('success', 'Se modifico con exito');
+            return redirect('/programa');
         } else {
             $this->errores = $response->json();
         }

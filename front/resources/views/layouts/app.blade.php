@@ -323,10 +323,10 @@
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
     <!-- Sweet Alerts -->
-    <script src="{{ asset('//cdn.jsdelivr.net/npm/sweetalert2@11') }}"></script>
+    {{-- <script src="{{ asset('//cdn.jsdelivr.net/npm/sweetalert2@11') }}"></script> --}}
 
-    <script>
-        Livewire.on('Success', message => {
+    {{-- <script>
+        Livewire.on('success', message => {
             Swal.fire({
                 position: 'top-end',
                 icon: 'success',
@@ -336,16 +336,15 @@
             })
         })
 
-        Livewire.on('Delete'
-            message => {
+        Livewire.on('delete', message => {
                 Swal.fire({
-                    title: 'Seguro que desea eliminar esta informacion?',
+                    title: '¿Seguro que desea eliminar esta informacion?',
                     text: message,
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, Eliminar!'
+                    confirmButtonText: 'Aceptar'
                 }).then((result) => {
                     if (result.isConfirmed) {
                         Swal.fire(
@@ -357,7 +356,7 @@
                     }
                 })
             })
-    </script>
+    </script> --}}
 
     @livewireScripts
 </body>

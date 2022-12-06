@@ -126,7 +126,8 @@ Route::post('/usuarios/generar-codigo', [UsuarioController::class, 'generar']);
 Route::post('/usuarios/cambiar-pass', [UsuarioController::class, 'cambiar']);
 Route::post('/usuarios', [UsuarioController::class, 'crear']);
 
-Route::get('/programas', [ProgramaController::class, 'show']);
+Route::get('/programas/', [ProgramaController::class, 'showAll']);
+Route::get('/programas/{id}', [ProgramaController::class, 'show']);
 Route::post('/programas', [ProgramaController::class, 'index']);
 Route::put('/programas/{id}', [ProgramaController::class, 'update']);
 Route::delete('/programas/{id}', [ProgramaController::class, 'destroy']);
