@@ -30,17 +30,14 @@
     </div>
     <div class="form-group">
         <label>Area</label>
-        <input wire:model='datos.areas_id' type="text" class="form-control" placeholder="Area_id">
+        <input wire:model='datos.areas_id' type="text" class="form-control" placeholder="Area ID">
         @if (array_key_exists('errors', $errores) && array_key_exists('areas_id', $errores['errors']))
             <b class="text-danger">{{ $errores['errors']['areas_id']['0'] }}</b>
         @endif
     </div>
     <div class="form-group">
         <label>Estado Global del programa</label>
-        <select wire:model='datos.estados_globales' class="form-control">
-            <option>Activo</option>
-            <option>Inactivo</option>
-        </select>
+        <input wire:model='datos.estados_globales' type="number" class="form-control" placeholder="Estado Global ID">
         @if (array_key_exists('errors', $errores) && array_key_exists('estados_globales', $errores['errors']))
         <b class="text-danger">{{ $errores['errors']['estados_globales']['0'] }}</b>
     @endif

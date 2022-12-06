@@ -25,13 +25,12 @@
                             <td><span class="badge badge-primary">{{$programa['id']}}</span></td>
                             <td>{{$programa['nombre']}}</td>
                             <td>{{$programa['descripcion']}}</td>
-                            <td>{{$programa['clave']}}</td>
                             <td>{{$programa['areas_id']}}</td>
                             <td>{{$programa['estados_globales']}}</td>
                             <td>
                                 <a href="programa/{{$programa['id']}}/show" class="bt brn-info btn-sm" title="Mostrar Informacion" href="">Abrir <i class="fa fa-eye"></i></a>
                                 <a href="programa/{{$programa['id']}}/edit" class="bt brn-primary btn-sm" title="Modificar Informacion" href="">Editar <i class="fa fa-edit"></i></a>
-                                <a wire:click='ConfirmarDelete({{$programa['id']}})' class="bt brn-danger btn-sm" title="Eliminar Informacion" href="">Eliminar <i class="fa fa-trash"></i></a>
+                                <button wire:click='ConfirmarDelete("{{$programa['id']}}")' class="bt brn-danger btn-sm" title="Eliminar Informacion" href="">Eliminar <i class="fa fa-trash"></i></button>
                             </td>
                         </tr>
                     @endforeach
