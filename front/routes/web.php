@@ -54,7 +54,7 @@ Route::get('/programa/create', ProgramaCreate::class);
 Route::get('/programa/{id}/show', ProgramaShow::class);
 Route::get('/programa/{id}/edit', ProgramaEdit::class);
 
-Route::get('/proyectos', ProyectoController::class);
-Route::get('/proyectos/create', ProyectoCreate::class);
-Route::get('/proyectos/{id}/show', ProyectoShow::class);
-Route::get('/proyectos/{id}/edit', ProyectoEdit::class);
+Route::get('/proyecto', ProyectoController::class);
+Route::get('/proyecto/create', ProyectoCreate::class);
+Route::get('/proyecto/{id}/show', ProyectoShow::class);
+Route::get('/proyecto/{id}/edit', ProyectoEdit::class);
