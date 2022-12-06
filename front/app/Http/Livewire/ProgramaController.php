@@ -16,7 +16,7 @@ class ProgramaController extends Component
         return view('livewire.programa-controller', compact('programas'));
     }
 
-    public function ConfirmarDelete()
+    public function ConfirmarDelete($id)
     {
         $this->idPrograma = $id;
         $this->emit('Delete', 'Desea eliminar esta informacion?');
