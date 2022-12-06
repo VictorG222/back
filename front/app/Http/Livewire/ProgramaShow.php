@@ -6,14 +6,14 @@ use Livewire\Component;
 
 class ProgramaShow extends Component
 {
-    public $idPrograma;
-    public function mount($id){
-        $this->idPrograma = $id;
+    public $programa;
+    public function mount($id)
+    {
+        $this->programa = Http::get('http://127.0.0.1:8000/api/programas/'. $id)->json();
     }
 
     public function render()
     {
-        $programa = Http::get('http://127.0.0.1:8000/api/programas/'.$this->$idPrograma)->json();
-        return view('livewire.programa-show', compact('programa'));
+        return view('livewire.programa-show');
     }
 }

@@ -291,9 +291,9 @@
     <!-- ./wrapper -->
 
     <!-- jQuery -->
-    <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
+    <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
     <!-- jQuery UI 1.11.4 -->
-    <script src="{{asset('plugins/jquery-ui/jquery-ui.min.js')}}"></script>
+    <script src="{{ asset('plugins/jquery-ui/jquery-ui.min.js') }}"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 
     <!-- Bootstrap 4 -->
@@ -322,6 +322,42 @@
     <script src="{{ asset('dist/js/demo.js') }}"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
+    <!-- Sweet Alerts -->
+    <script src="{{ asset('//cdn.jsdelivr.net/npm/sweetalert2@11') }}"></script>
+
+    <script>
+        Livewire.on('Success', message => {
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: message,
+                showConfirmButton: false,
+                timer: 1500
+            })
+        })
+
+        Livewire.on('Delete'
+            message => {
+                Swal.fire({
+                    title: 'Seguro que desea eliminar esta informacion?',
+                    text: message,
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, Eliminar!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire(
+                            'Informacion Eliminada!',
+                            'Eliminado con exito.',
+                            'success'
+                        );
+                        Livewire.emit('eliminar');
+                    }
+                })
+            })
+    </script>
 
     @livewireScripts
 </body>

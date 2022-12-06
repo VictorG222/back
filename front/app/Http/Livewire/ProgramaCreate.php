@@ -20,6 +20,7 @@ class ProgramaCreate extends Component
             'Accept' => 'Application/json'
         ]) -> post('http://127.0.0.1:8000/api/programas');
         if ($response->successful()) {
+            $this->emit('Success', 'Se creo con exito');
             return redirect('/programa');
         } else{
             $this->errores = $response->json();
