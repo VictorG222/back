@@ -106,9 +106,9 @@ class ProgramaController extends Controller
         return [
             'nombre'=>'required|string',
             'descripcion'=>'required|string',
-            'clave'=>'required|string|unique:programa',
+            'clave'=>'required|string|unique:programas',
             'areas_id'=>'required|exists:areas,id',
-            'estados_globales_id'=>'required|exists:estado_globals,id'
+            'estados_globales'=>'required|exists:estado_globals,id'
         ];
     }
 
@@ -118,9 +118,9 @@ class ProgramaController extends Controller
             return [
                 'nombre'=>'string',
                 'descripcion'=>'string',
-                'clave'=>'string|unique:programa',
+                'clave'=>'string|unique:programas',
                 'areas_id'=>'exists:areas,id',
-                'estados_globales_id'=>'exists:estado_globals,id'
+                'estados_globales'=>'exists:estado_globals,id'
             ];
         }
 }

@@ -21,7 +21,7 @@ class AreaController extends Controller
         $area = Area::create($data);
 
         return response([
-            'message'=> 'Se creo con exito el usuario',
+            'message'=> 'Se creo con exito el Area',
             'id' => $area['id']
         ], 201);
 

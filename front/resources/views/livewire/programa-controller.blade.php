@@ -26,7 +26,7 @@
                             <td>{{$programa['nombre']}}</td>
                             <td>{{$programa['descripcion']}}</td>
                             <td>{{$programa['areas_id']}}</td>
-                            <td>{{$programa['estados_globales_id']}}</td>
+                            <td>{{$programa['estados_globales']}}</td>
                             <td>
                                 <a href="programas/{{$programa['id']}}/show" class="bt brn-info btn-sm" title="Mostrar Informacion" href=""><i class="fa fa-eye">
                             </td>

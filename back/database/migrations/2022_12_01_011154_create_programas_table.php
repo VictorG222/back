@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('descripcion');
-            $table->string('clave');
+            $table->string('clave')->unique();
             $table->unsignedBigInteger('areas_id');
             $table->unsignedBigInteger('estados_globales');
             $table->timestamps();

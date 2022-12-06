@@ -107,25 +107,6 @@ Route::middleware('auth:sanctum')->group(function() {
 
 
 
-    Route::get('/programas', [ProgramaController::class, 'show']);
-    Route::post('/programas', [ProgramaController::class, 'index']);
-    Route::put('/programas/{id}', [ProgramaController::class, 'update']);
-    Route::delete('/programas/{id}', [ProgramaController::class, 'destroy']);
-
-    Route::get('/proyectos', [ProyectoController::class, 'show']);
-    Route::post('/proyectos', [ProyectoController::class, 'index']);
-    Route::put('/proyectos/{id}', [ProyectoController::class, 'update']);
-    Route::delete('/proyectos/{id}', [ProyectoController::class, 'destroy']);
-
-    Route::get('/estados-globales', [EstadoGlobalController::class, 'show']);
-    Route::post('/estados-globales', [EstadoGlobalController::class, 'index']);
-    Route::put('/estados-globales/{id}', [EstadoGlobalController::class, 'update']);
-    Route::delete('/estados-globales/{id}', [EstadoGlobalController::class, 'destroy']);
-
-    Route::get('/areas', [AreaController::class, 'show']);
-    Route::post('/areas', [AreaController::class, 'index']);
-    Route::put('/areas/{id}', [AreaController::class, 'update']);
-    Route::delete('/areas/{id}', [AreaController::class, 'destroy']);
 
 
 
@@ -144,3 +125,23 @@ Route::post('/login', [UsuarioController::class, 'login']);
 Route::post('/usuarios/generar-codigo', [UsuarioController::class, 'generar']);
 Route::post('/usuarios/cambiar-pass', [UsuarioController::class, 'cambiar']);
 Route::post('/usuarios', [UsuarioController::class, 'crear']);
+
+Route::get('/programas', [ProgramaController::class, 'show']);
+Route::post('/programas', [ProgramaController::class, 'index']);
+Route::put('/programas/{id}', [ProgramaController::class, 'update']);
+Route::delete('/programas/{id}', [ProgramaController::class, 'destroy']);
+
+Route::get('/proyectos', [ProyectoController::class, 'show']);
+Route::post('/proyectos', [ProyectoController::class, 'index']);
+Route::put('/proyectos/{id}', [ProyectoController::class, 'update']);
+Route::delete('/proyectos/{id}', [ProyectoController::class, 'destroy']);
+
+Route::get('/estados-globales', [EstadoGlobalController::class, 'show']);
+Route::post('/estados-globales', [EstadoGlobalController::class, 'index']);
+Route::put('/estados-globales/{id}', [EstadoGlobalController::class, 'update']);
+Route::delete('/estados-globales/{id}', [EstadoGlobalController::class, 'destroy']);
+
+Route::get('/areas', [AreaController::class, 'show']);
+Route::post('/areas', [AreaController::class, 'index']);
+Route::put('/areas/{id}', [AreaController::class, 'update']);
+Route::delete('/areas/{id}', [AreaController::class, 'destroy']);
