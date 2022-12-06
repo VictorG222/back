@@ -14,6 +14,9 @@ use App\Http\Controllers\amiiboController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\usuarioController as ControllersUsuarioController;
 use App\Http\Livewire\EstadoController;
+use App\Http\Livewire\EstadoCreate;
+use App\Http\Livewire\EstadoEdit;
+use App\Http\Livewire\EstadoShow;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,13 +37,15 @@ Route::get('/', function () {
 Route::get('/amiibos', [amiiboController::class, 'index']);
 Route::get('/usuarios', [UsuarioController::class, 'index']);
 Route::get('/asset', [AssetController::class, 'index']);
+Route::get('/contador', Contador::class);
+
+
+Route::get('/estado', EstadoController::class);
+Route::get('/estado/create', EstadoCreate::class);
+Route::get('/estado/{id}/show', EstadoShow::class);
+Route::get('/estado/{id}/edit', EstadoEdit::class);
 
 Route::get('/programa', ProgramaController::class);
 Route::get('/programa/create', ProgramaCreate::class);
 Route::get('/programa/{id}/show', ProgramaShow::class);
 Route::get('/programa/{id}/edit', ProgramaEdit::class);
-
-Route::get('/contador', Contador::class);
-
-
-Route::get('/estados', EstadoController::class);
