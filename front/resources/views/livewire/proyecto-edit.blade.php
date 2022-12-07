@@ -7,7 +7,7 @@
 
         <form wire:submit.prevent='modificar'>
             <div class="card-body">
-                @include('livewire.formulario')
+                @include('livewire.formulario-proyecto')
 
                 <div class="card-footer">
                     <button type="submit" class="btn btn-success">Modificar</button>

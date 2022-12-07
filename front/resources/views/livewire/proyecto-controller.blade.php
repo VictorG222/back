@@ -23,8 +23,8 @@
                         <tr>
                             <td><span class="badge badge-primary">{{$proyecto['id']}}</span></td>
                             <td>{{$proyecto['nombre']}}</td>
-                            <td>{{$proyecto['descripcion']}}</td>
-                            <td>{{$proyecto['areas_id']}}</td>
+                            <td>{{$proyecto['clave']}}</td>
+                            <td>{{$proyecto['programa_id']}}</td>
                             <td>{{$proyecto['estados_globales']}}</td>
                             <td>
                                 <a href="proyecto/{{$proyecto['id']}}/show" class="btn btn-info btn-sm" title="Mostrar Informacion" href="">Abrir <i class="fa fa-eye"></i></a>
