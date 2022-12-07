@@ -21,6 +21,10 @@ use App\Http\Livewire\ProyectoController;
 use App\Http\Controllers\amiiboController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\usuarioController as ControllersUsuarioController;
+use App\Http\Livewire\AreaController;
+use App\Http\Livewire\AreaCreate;
+use App\Http\Livewire\AreaEdit;
+use App\Http\Livewire\AreaShow;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,3 +62,8 @@ Route::get('/proyecto', ProyectoController::class);
 Route::get('/proyecto/create', ProyectoCreate::class);
 Route::get('/proyecto/{id}/show', ProyectoShow::class);
 Route::get('/proyecto/{id}/edit', ProyectoEdit::class);
+
+Route::get('/area', AreaController::class);
+Route::get('/area/create', AreaCreate::class);
+Route::get('/area/{id}/show', AreaShow::class);
+Route::get('/area/{id}/edit', AreaEdit::class);

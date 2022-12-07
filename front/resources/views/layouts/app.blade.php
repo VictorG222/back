@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Dashboard</title>
+    <title>Egresos</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -79,7 +79,7 @@
                     </div>
                 </li>
 
-                <!-- Messages Dropdown Menu -->
+                {{-- <!-- Messages Dropdown Menu -->
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="far fa-comments"></i>
@@ -140,8 +140,8 @@
                         <div class="dropdown-divider"></div>
                         <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
                     </div>
-                </li>
-                <!-- Notifications Dropdown Menu -->
+                </li> --}}
+                {{-- <!-- Notifications Dropdown Menu -->
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="far fa-bell"></i>
@@ -178,7 +178,7 @@
                         href="#" role="button">
                         <i class="fas fa-th-large"></i>
                     </a>
-                </li>
+                </li> --}}
             </ul>
         </nav>
         <!-- /.navbar -->
@@ -189,7 +189,7 @@
             <a href="index3.html" class="brand-link">
                 <img src="{{ asset('dist/img/AdminLTELogo.png') }} " alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">AdminLTE 3</span>
+                <span class="brand-text font-weight-light">SAC</span>
             </a>
 
             <!-- Sidebar -->
@@ -201,7 +201,7 @@
                             alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
+                        <a href="#" class="d-block">Manuel Covarrubias</a>
                     </div>
                 </div>
 
@@ -236,7 +236,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/widgets.html" class="nav-link">
+                            <a href="/area" class="nav-link">
                                 <i class="nav-icon fa fa-address-book"></i>
                                 <p>
                                     Areas
@@ -245,10 +245,19 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/widgets.html" class="nav-link">
+                            <a href="/proyecto" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Proyectos
+
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/estado" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Estados Globales
 
                                 </p>
                             </a>

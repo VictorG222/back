@@ -27,9 +27,9 @@
                             <td>{{$proyecto['areas_id']}}</td>
                             <td>{{$proyecto['estados_globales']}}</td>
                             <td>
-                                <a href="programa/{{$proyecto['id']}}/show" class="bt brn-info btn-sm" title="Mostrar Informacion" href="">Abrir <i class="fa fa-eye"></i></a>
-                                <a href="programa/{{$proyecto['id']}}/edit" class="bt brn-primary btn-sm" title="Modificar Informacion" href="">Editar <i class="fa fa-edit"></i></a>
-                                <button wire:click='ConfirmarDelete("{{$proyecto['id']}}")' class="bt brn-danger btn-sm" title="Eliminar Informacion" href="">Eliminar <i class="fa fa-trash"></i></button>
+                                <a href="proyecto/{{$proyecto['id']}}/show" class="btn btn-info btn-sm" title="Mostrar Informacion" href="">Abrir <i class="fa fa-eye"></i></a>
+                                <a href="proyecto/{{$proyecto['id']}}/edit" class="btn btn-primary btn-sm" title="Modificar Informacion" href="">Editar <i class="fa fa-edit"></i></a>
+                                <button wire:click='ConfirmarDelete("{{$proyecto['id']}}")' class="btn btn-danger btn-sm" title="Eliminar Informacion" href="">Eliminar <i class="fa fa-trash"></i></button>
                             </td>
                         </tr>
                     @endforeach
@@ -39,7 +39,7 @@
 
 
         <div class=“container” style="width: 25%; margin: 0 auto">
-            <a class="btn btn-block btn-success" href="/programa/create" width="100 px"><i class="fa fa-save"></i> CREAR PROYECTO</a>
+            <a class="btn btn-block btn-success" href="/proyecto/create" width="100 px"><i class="fa fa-save"></i> CREAR PROYECTO</a>
           </div>
 
 
