@@ -15,7 +15,7 @@
                     </li>
                     <li class="nav-item">
                         <span class="nav-link">
-                            Nombre <span class="float-right badge bg-primary">{{ $programa['nombre'] }}</span>
+                            Nombre <span class="float-right">{{ $programa['nombre'] }}</span>
                         </span>
                     </li>
                     <li class="nav-item">
@@ -28,7 +28,7 @@
                             ESTADO GLOBAL <span class="float-right">{{ $programa['estados_globales'] }}</span>
                         </span>
                     </li>
-                    <a class="btn btn-block btn-outline-success btn-sm" href="/programa"><i
+                    <a class="btn btn-block btn-outline-success btn-mx" href="/programa"><i
                             class="fa fa-home"></i>Regresar</a>
                 </ul>
             </div>

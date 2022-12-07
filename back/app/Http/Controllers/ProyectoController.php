@@ -118,7 +118,7 @@ class ProyectoController extends Controller
     {
         return [
             'nombre'=>'required|string',
-            'clave'=>'required|string|unique:proyecto',
+            'clave'=>'required|string|unique:proyectos',
             'programa_id'=>'required|exists:programas,id',
             'estados_globales'=>'required|exists:estado_globals,id'
         ];
@@ -129,7 +129,7 @@ class ProyectoController extends Controller
         {
             return [
                 'nombre'=>'string',
-                'clave'=>'string|unique:proyecto',
+                'clave'=>'string|unique:proyectos',
                 'programa_id'=>'exists:programas,id',
                 'estados_globales'=>'exists:estado_globals,id'
             ];

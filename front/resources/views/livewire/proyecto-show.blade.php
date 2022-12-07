@@ -14,7 +14,7 @@
                     </li>
                     <li class="nav-item">
                         <span class="nav-link">
-                            Nombre <span class="float-right badge bg-primary">{{ $proyecto['nombre'] }}</span>
+                            Nombre <span class="float-right">{{ $proyecto['nombre'] }}</span>
                         </span>
                     </li>
                     <li class="nav-item">
@@ -32,7 +32,7 @@
                             ESTADO GLOBAL <span class="float-right">{{ $proyecto['estados_globales'] }}</span>
                         </span>
                     </li>
-                    <a class="btn btn-block btn-outline-success btn-sm" href="/programa"><i
+                    <a class="btn btn-block btn-outline-success btn-mx" href="/programa"><i
                             class="fa fa-home"></i>Regresar</a>
                 </ul>
             </div>

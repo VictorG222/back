@@ -1,6 +1,4 @@
 <div>
-
-
     <div class="card card-success">
         <div class="card-header">
             <h3 class="card-title">TABLA DE ESTADOS GLOBALES</h3>
@@ -21,9 +19,9 @@
                             <td><span class="badge badge-primary">{{$estado['id']}}</span></td>
                             <td>{{$estado['descripcion']}}</td>
                             <td>
-                                <a href="estado/{{$estado['id']}}/show" class="bt brn-info btn-sm" title="Mostrar Informacion" href="">Abrir <i class="fa fa-eye"></i></a>
-                                <a href="estado/{{$estado['id']}}/edit" class="bt brn-primary btn-sm" title="Modificar Informacion" href="">Editar <i class="fa fa-edit"></i></a>
-                                <a wire:click='ConfirmarDelete({{$estado['id']}})' class="bt brn-danger btn-sm" title="Eliminar Informacion" href="">Eliminar <i class="fa fa-trash"></i></a>
+                                <a href="estado/{{$estado['id']}}/show" class="btn btn-info btn-sm" title="Mostrar Informacion" href="">Abrir <i class="fa fa-eye"></i></a>
+                                <a href="estado/{{$estado['id']}}/edit" class="btn btn-primary btn-sm" title="Modificar Informacion" href="">Editar <i class="fa fa-edit"></i></a>
+                                <a wire:click='ConfirmarDelete({{$estado['id']}})' class="btn btn-danger btn-sm" title="Eliminar Informacion" href="">Eliminar <i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                     @endforeach

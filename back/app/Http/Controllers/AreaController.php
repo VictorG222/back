@@ -118,7 +118,7 @@ class AreaController extends Controller
     {
         return [
             'descripcion'=>'required|string',
-            'disponible'=>'required|boolean',
+            'disponible'=>'boolean',
             'estados_globales'=>'required|exists:estado_globals,id',
         ];
     }

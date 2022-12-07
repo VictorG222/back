@@ -21,7 +21,7 @@ class EstadoController extends Component
     public function ConfirmarDelete($id)
     {
         $this->idEstado = $id;
-        Http::delete('http://127.0.0.1:8001/api/estados-globales'.$this->idEstado);
+        Http::delete('http://127.0.0.1:8001/api/estados-globales/'.$this->idEstado);
 
     }
 }
