@@ -9,8 +9,6 @@
             <div class="card-body">
 
 
-                <form wire:submit.prevent='guardar'>
-
                     <div class="card-body">
 
                         @if (array_key_exists('message', $errores))
@@ -25,7 +23,7 @@
                             @if (array_key_exists('errors', $errores) && array_key_exists('descripcion', $errores['errors']))
                                 <b class="text-danger">{{ $errores['errors']['descripcion']['0'] }}</b>
                             @endif
-                    </div>
+                        </div>
 
 
                 <div class="card-footer">

@@ -3,7 +3,7 @@
 
     <div class="card card-success">
         <div class="card-header">
-            <h3 class="card-title">TABLA DE PROYECTOS</h3>
+            <h3 class="card-title">TABLA DE AREA</h3>
         </div>
 
         <div class="card-body">
@@ -11,24 +11,23 @@
                 <thead>
                     <tr>
                         <th style="width: 10px">ID</th>
-                        <th>Nombre</th>
                         <th>Clave</th>
-                        <th>Programa_id</th>
+                        <th>Descripcion</th>
                         <th style="width: 40px">Estado Global</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($proyectos as $proyecto)
+                    @foreach ($areas as $area)
                         <tr>
-                            <td><span class="badge badge-primary">{{$proyecto['id']}}</span></td>
-                            <td>{{$proyecto['descripcion']}}</td>
-                            <td>{{$proyecto['disponible']}}</td>
-                            <td>{{$proyecto['estados_globales']}}</td>
+                            <td><span class="badge badge-primary">{{$area['id']}}</span></td>
+                            <td>{{$area['descripcion']}}</td>
+                            <td>{{$area['disponible']}}</td>
+                            <td>{{$area['estados_globales']}}</td>
                             <td>
-                                <a href="area/{{$proyecto['id']}}/show" class="btn btn-info btn-sm" title="Mostrar Informacion" href="">Abrir <i class="fa fa-eye"></i></a>
-                                <a href="area/{{$proyecto['id']}}/edit" class="btn btn-primary btn-sm" title="Modificar Informacion" href="">Editar <i class="fa fa-edit"></i></a>
-                                <button wire:click='ConfirmarDelete("{{$proyecto['id']}}")' class="btn btn-danger btn-sm" title="Eliminar Informacion" href="">Eliminar <i class="fa fa-trash"></i></button>
+                                <a href="area/{{$area['id']}}/show" class="btn btn-info btn-sm" title="Mostrar Informacion" href="">Abrir <i class="fa fa-eye"></i></a>
+                                <a href="area/{{$area['id']}}/edit" class="btn btn-primary btn-sm" title="Modificar Informacion" href="">Editar <i class="fa fa-edit"></i></a>
+                                <button wire:click='ConfirmarDelete({{$area['id']}})' class="btn btn-danger btn-sm" title="Eliminar Informacion" href="">Eliminar <i class="fa fa-trash"></i></button>
                             </td>
                         </tr>
                     @endforeach
@@ -38,7 +37,7 @@
 
 
         <div class=“container” style="width: 25%; margin: 0 auto">
-            <a class="btn btn-block btn-success" href="/area/create" width="100 px"><i class="fa fa-save"></i> CREAR PROYECTO</a>
+            <a class="btn btn-block btn-success" href="/area/create" width="100 px"><i class="fa fa-save"></i> CREAR AREA</a>
           </div>
 
 
